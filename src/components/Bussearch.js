@@ -37,18 +37,18 @@ export default function Bussearch() {
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item eventKey="Other">Other</NavDropdown.Item>
                             </NavDropdown>
-                            <Form className="d-flex ms-2">
-                                <FormControl
-                                    type="search"
-                                    placeholder="Search"
-                                    className="me-2"
-                                    aria-label="Search"
-                                    value={selectedDestination}
-                                    readOnly
-                                />
-                                <Button className="custom-button" >Find Bus</Button>
-                            </Form>
                         </Nav>
+                        <Form className="d-flex align-items-center">
+                            <FormControl
+                                type="search"
+                                placeholder="Search"
+                                className="me-2"
+                                aria-label="Search"
+                                value={selectedDestination}
+                                readOnly
+                            />
+                            <Button className="custom-button">Find Bus</Button>
+                        </Form>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
