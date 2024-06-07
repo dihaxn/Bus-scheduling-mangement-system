@@ -17,7 +17,7 @@ export default function Traveltotag() {
     return (
         <div>
             <h1 className="travel-to-heading">
-                Travel to:<Badge className="Town" bg="secondary">{towns[currentTownIndex]}</Badge>
+                Travel to <Badge className="Town" bg="secondary">{towns[currentTownIndex]}</Badge>
             </h1>
         </div>
     );

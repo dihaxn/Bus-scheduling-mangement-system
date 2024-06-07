@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import './Home.css';
 
-export default function Home({ isLoggedIn }) {
+export default function Home() {
     return (
         <div className="home-container">
             <div className="head">
