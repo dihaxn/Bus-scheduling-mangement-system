@@ -19,7 +19,6 @@ export default function Bussearch() {
         <div className="bussearch">
             <Navbar expand="lg" className="bg-body-tertiary mb-3">
                 <Container fluid>
-                    <Navbar.Brand href="#"></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="me-auto align-items-center navbar-nav">
