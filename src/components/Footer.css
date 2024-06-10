@@ -1,9 +1,8 @@
 .footer {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 20px;
+    justify-content: space-between;
     background-color: #f1f1f1;
+    padding: 20px;
     border-top: 1px solid #ddd;
     position: fixed;
     bottom: 0;
@@ -11,15 +10,19 @@
 }
 
 .footer-section {
-    text-align: center;
     flex: 1;
-    margin: 0 10px;
+    text-align: center;
 }
 
-.footer-section h3 {
-    margin-bottom: 10px;
+.footer-section a {
+    font-size: 1.5em; /* Increase font size slightly */
+    font-weight: bold; /* Make links bold */
+    color: #333;
+    text-decoration: none;
+    display: block;
 }
 
 .footer-section p {
-    margin: 0;
+    color: #666;
+    margin-top: 0; /* Reduce margin-top */
 }
