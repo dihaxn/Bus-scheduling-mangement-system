@@ -1,0 +1,31 @@
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Set navbar brand text color */
+    margin-left: 10px; /* Adjust margin as needed */
+    font-family: "Permanent Marker", cursive; /* Correctly set the font-family */
+}
+
+.btn-secondary {
+    background-color: #27527e; /* Button background color */
+    border-color: #27527e;
+
+}
+
+.btn-secondary:hover {
+    background-color: #04b5ef; /* Button hover background color */
+    border-color: #04b5ef;
+}
+
+.dropdown-menu {
+    background-color: #27527e; /* Dropdown menu background color */
+}
+
+.dropdown-item {
+    color: #fff; /* Dropdown item text color */
+}
+
+.dropdown-item:hover {
+    background-color: lightblue; /* Hovered dropdown item background color */
+    color: #fff; /* Hovered dropdown item text color */
+}

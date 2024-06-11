@@ -1,0 +1,14 @@
+.nav-link-custom {
+    font-family: "Cormorant", serif; /* Correct font-family with a fallback */
+    font-size: 1rem; /* Optional: set a default font size */
+    /* Optional: ensures it inherits color from parent */
+    text-decoration: none; /* Optional: remove underline if present */
+    padding: 5px 10px; /* Optional: add some padding for better spacing */
+    font-size: medium;
+}
+
+.nav-link-custom:hover {
+
+    color: #04b5ef;
+
+}
