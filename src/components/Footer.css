@@ -1,0 +1,28 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-section a {
+    font-size: 1.5em; /* Increase font size slightly */
+    font-weight: bold; /* Make links bold */
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.footer-section p {
+    color: #666;
+    margin-top: 0; /* Reduce margin-top */
+}
