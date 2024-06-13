@@ -1,0 +1,36 @@
+.bussearch {
+    display: flex;
+    align-items: center;
+    font-family: "Balsamiq Sans", cursive;
+    font-size: 1rem;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-link {
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.custom-button {
+    border-color: lightblue;
+    color: lightblue;
+    padding: 0.5rem 1rem;
+    white-space: nowrap; /* Ensure button text doesn't wrap */
+    background-color: transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.custom-button:hover {
+    background-color: lightblue;
+    border-color: lightblue;
+    color: white;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}

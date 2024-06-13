@@ -1,0 +1,72 @@
+.head {
+    background: linear-gradient(to bottom, #04b5ef, #ffffff); /* Gradient from light blue to white */
+    color: #000; /* Set text color to black */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.header,
+.navibar,
+.footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content */
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.search-bar {
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 750px;
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.footer {
+    margin-top: auto;
+    background-color: #fdfcfc; /* Light pink background */
+    text-align: center; /* Center align content */
+    padding: 20px;
+}
+
+.foott {
+    background: linear-gradient(to bottom, lightblue, #ffffff); /* Gradient from light blue to white */
+    text-align: center;
+    padding: 20px;
+}
+
+.nav-link-custom {
+    color: #fff; /* Font color */
+}
+
+.nav-link-custom:hover {
+    color: #007bff; /* Font color on hover */
+    border-color: #007bff; /* Border color on hover */
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+
