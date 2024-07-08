@@ -61,9 +61,6 @@ export default function Map() {
         SortbyAttribute={SortbyAttribute}
       />
       <Timetable bustable={bustable} />
-      <div className="footer-wrapper">
-        <Footer />
-      </div>
     </div>
   );
 }
