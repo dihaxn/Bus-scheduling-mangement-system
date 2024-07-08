@@ -1,0 +1,57 @@
+.list {
+  color: #1f1d1a;
+  padding: 4rem 0;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+}
+.list ul {
+  list-style: none;
+  width: 70%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  align-content: start;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  border: 2px solid blue;
+  border-radius: 10px;
+  justify-content: space-around;
+}
+.Container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.Label {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.sort {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.BusDeatil .Shedule .Icons .Ticket {
+  padding: 2rem;
+}
+.Icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.2rem;
+}
