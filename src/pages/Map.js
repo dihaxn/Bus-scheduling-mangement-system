@@ -21,12 +21,12 @@ export default function Map() {
   const navigate = useNavigate();
 
   function SortbyName(bustable) {
-    bustable = businfo.slice().sort((a, b) => a.Name.localeCompare(b.Name));
+    bustable = bustable.slice().sort((a, b) => a.Name.localeCompare(b.Name));
     setBusinfo(bustable);
   }
 
   function SortbyAttribute(bustable, attribute) {
-    bustable = businfo.slice().sort((a, b) => a[attribute] - b[attribute]);
+    bustable = bustable.slice().sort((a, b) => a[attribute] - b[attribute]);
     setBusinfo(bustable);
   }
 
