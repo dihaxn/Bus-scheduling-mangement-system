@@ -14,11 +14,22 @@ import { ReactComponent as Temperature } from "../resources/thermometer-snow.svg
 import Sort from "./Sort";
 import businfo from "../components/busInfo";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Map() {
   const [bustable, setBusinfo] = useState(businfo);
   const location = useLocation();
+  const destination = location.state?.destination || "";
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (destination) {
+      const filteredBustable = businfo.filter(
+        (bus) => bus.city === destination
+      );
+      setBusinfo(filteredBustable);
+    }
+  }, [destination]);
 
   function SortbyName(bustable) {
     bustable = bustable.slice().sort((a, b) => a.Name.localeCompare(b.Name));
