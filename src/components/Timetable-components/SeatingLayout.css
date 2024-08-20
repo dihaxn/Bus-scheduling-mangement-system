@@ -1,0 +1,43 @@
+.seating-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .door, .rear {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .seats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) repeat(2, 1fr) repeat(2, 1fr) repeat(2, 1fr) repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #fefeff;
+    border-radius: 10px;
+  }
+  
+  .seat {
+    width: 50px;
+    height: 50px;
+    background-color: #818386;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .seat.selected {
+    background-color: #ef8354;
+  }
+  
+  .seat.occupied {
+    background-color: #2d3142;
+    cursor: not-allowed;
+  }
+ 

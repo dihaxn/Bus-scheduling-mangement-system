@@ -1,0 +1,31 @@
+
+.ticket{
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+}
+
+.ticket li{
+    width: 65%;
+    padding: 1.5%;
+}
+li{
+    display: flex;
+    align-items: center;
+    border: 2px solid blue;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+.ticketInfo{
+
+  display: flex;
+  width: 65%;
+
+}
+.btnContainer{
+    text-align: right;
+}
