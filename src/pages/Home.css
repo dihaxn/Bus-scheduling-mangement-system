@@ -5,13 +5,11 @@
     padding: 0; /* Remove default padding */
 }
 
-.header,
-.navibar,
-.footer {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/*
+Removed problematic global-like selectors for .header, .navibar, .footer
+from page-specific CSS. Styling for these components should be in their
+respective CSS files (e.g., Header.css, Footer.css) or done via props/utilities.
+*/
 
 .content {
     display: flex;
@@ -40,12 +38,10 @@
     font-size: 1rem;
 }
 
-.footer {
-    margin-top: auto;
-    background-color: #fdfcfc; /* Light pink background */
-    text-align: center; /* Center align content */
-    padding: 20px;
-}
+/*
+Removed .footer styling from Home.css as it conflicts with Footer.css.
+Footer styling should be managed in components/Footer.css.
+*/
 
 .foott {
     background: linear-gradient(to bottom, lightblue, #ffffff); /* Gradient from light blue to white */
@@ -53,14 +49,11 @@
     padding: 20px;
 }
 
-.nav-link-custom {
-    color: #fff; /* Font color */
-}
-
-.nav-link-custom:hover {
-    color: #007bff; /* Font color on hover */
-    border-color: #007bff; /* Border color on hover */
-}
+/*
+Removed .nav-link-custom and .nav-link-custom:hover styling from Home.css
+as it conflicts/duplicates styles in Navibar.css.
+Styling for nav links should be managed in components/Navibar.css.
+*/
 
 .footer-wrapper {
     display: flex;

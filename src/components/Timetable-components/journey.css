@@ -11,7 +11,19 @@
 .ticket li{
     width: 65%;
     padding: 1.5%;
+    /* Merged general li styles below to be specific to .ticket li */
+    display: flex;
+    align-items: center;
+    border: 2px solid blue;
+    border-radius: 10px;
+    justify-content: space-around;
 }
+/*
+The following general 'li' selector was removed to avoid global side effects.
+Its styles were merged into '.ticket li' assuming they were intended for list items
+within the .ticket context. If other LIs need similar styling,
+a dedicated class should be created and applied to them.
+
 li{
     display: flex;
     align-items: center;
@@ -19,7 +31,7 @@ li{
     border-radius: 10px;
     justify-content: space-around;
 }
-
+*/
 .ticketInfo{
 
   display: flex;

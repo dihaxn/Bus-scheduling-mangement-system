@@ -5,11 +5,11 @@ export default function Footer() {
     return (
         <div className="footer">
             <div className="footer-section">
-                <a href="#" target="_blank" rel="noopener noreferrer">About Us</a>
+                <a href="/about">About Us</a> {/* Updated href, removed target and rel */}
                 <p>Learn more about our company and values.</p>
             </div>
             <div className="footer-section">
-                <a href="#" target="_blank" rel="noopener noreferrer">FAQ</a>
+                <a href="/faq">FAQ</a> {/* Updated href, removed target and rel */}
                 <p>Find answers to common questions.</p>
             </div>
             <div className="footer-section">
