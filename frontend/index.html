@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button id="nav-buses">Buses</button>
+        <button id="nav-routes">Routes</button>
+        <button id="nav-schedules">Schedules</button>
+    </nav>
+
+    <div id="content">
+        <div id="buses-view">
+            <h2>Manage Buses</h2>
+            <table id="buses-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Capacity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Bus rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+
+            <form id="add-bus-form">
+                <h3>Add/Edit Bus</h3>
+                <input type="text" id="bus-name" placeholder="Bus Name" required>
+                <input type="number" id="bus-capacity" placeholder="Capacity" required>
+                <button type="submit">Add Bus</button>
+            </form>
+        </div>
+
+        <div id="routes-view" style="display: none;">
+            <h2>Manage Routes</h2>
+            <table id="routes-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Stops</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Route rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+
+            <form id="add-route-form">
+                <h3>Add/Edit Route</h3>
+                <input type="text" id="route-name" placeholder="Route Name" required>
+                <input type="text" id="route-stops" placeholder="Stops (comma-separated)" required>
+                <button type="submit">Add Route</button>
+            </form>
+        </div>
+
+        <div id="schedules-view" style="display: none;">
+            <h2>Manage Schedules</h2>
+            <table id="schedules-table">
+                <thead>
+                    <tr>
+                        <th>Bus</th>
+                        <th>Route</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Schedule rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+
+            <form id="add-schedule-form">
+                <h3>Add/Edit Schedule</h3>
+                <select id="schedule-bus" required></select>
+                <select id="schedule-route" required></select>
+                <input type="datetime-local" id="schedule-departure" required>
+                <input type="datetime-local" id="schedule-arrival" required>
+                <button type="submit">Add Schedule</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
