@@ -1,7 +1,7 @@
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white; /* Set navbar brand text color */
+    /* color: white; */ /* Removed: navbar-dark class on nav should handle this */
     margin-left: 10px; /* Adjust margin as needed */
     font-family: "Permanent Marker", cursive; /* Correctly set the font-family */
 }
