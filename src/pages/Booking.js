@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navibar from "../components/Navibar";
+import Header from "../components/Header"; // Replaced Navibar with Header
 import Journey from "../components/Timetable-components/Journey";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -23,12 +23,14 @@ export default function Booking() {
 
   return (
     <div>
-      <header>
+      <Header /> {/* Added Header component */}
+      {/* <header>
         <h1>Booking Page</h1>
         <br />
         <Navibar />
-      </header>
+      </header> */} {/* Removed old header block */}
       <main>
+        <h1>Booking Page</h1> {/* Moved h1 into main */}
         <section>
           <div className="ticket_container">
             <div className="ticket">
