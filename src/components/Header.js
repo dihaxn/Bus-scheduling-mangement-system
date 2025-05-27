@@ -1,5 +1,5 @@
 import React from "react";
-import Navibar from "./Navibar";
+import Nav from 'react-bootstrap/Nav'; // Import Nav
 import "./Header.css"; // Import the CSS file
 import logo from "./logo.gif";
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
@@ -16,7 +16,7 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) { // Des
     <div>
       {/* Navigation bar */}
       <div className="pos-f-t">
-        <nav className="navbar navbar-dark"> {/* Removed bg-lightblue */}
+        <nav className="navbar navbar-custom-gradient"> {/* Changed to navbar-custom-gradient */}
           {/* Company logo and name */}
           <Link to="/" className="navbar-brand d-flex align-items-center">
             <img
@@ -27,6 +27,19 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) { // Des
             {/* Adjust the height and margin as needed */}
             RoutesTimePro
           </Link>
+
+          {/* Navigation links from Navibar.js */}
+          <Nav variant="tabs" defaultActiveKey="/home" className="mx-auto"> {/* Added mx-auto for centering */}
+            <Nav.Item>
+                <Nav.Link as={Link} to="/home" className="nav-link-custom">Home</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link as={Link} to="/booking" className="nav-link-custom">Booking</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link as={Link} to="/map" className="nav-link-custom">Bus Schedules</Nav.Link>
+            </Nav.Item>
+          </Nav>
 
           {/* Navigation items */}
           <div className="ml-auto d-flex align-items-center">
@@ -64,7 +77,7 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) { // Des
           </div>
         </nav>
       </div>
-      <Navibar />
+      {/* <Navibar /> */} {/* Removed Navibar component */}
     </div>
   );
 }
