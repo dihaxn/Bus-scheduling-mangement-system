@@ -23,7 +23,6 @@ export default function Booking() {
 
   return (
     <div>
-      <Header /> {/* Added Header component */}
       {/* <header>
         <h1>Booking Page</h1>
         <br />

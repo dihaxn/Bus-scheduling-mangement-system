@@ -18,7 +18,6 @@ export default function Home() {
   return (
     <div className="home-container">
       <div className="head">
-        <Header />
         <br />
         <br />
         <br />

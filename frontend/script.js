@@ -425,6 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function handleDeleteBus(busId) {
+        // eslint-disable-next-line no-restricted-globals
         if (!confirm('Are you sure you want to delete this bus?')) return;
         try {
             const response = await fetch(`${API_URL}/buses/${busId}`, { method: 'DELETE' });

@@ -48,7 +48,6 @@ export default function Map() {
   return (
     <div className="home-container">
       <div className="head">
-        <Header />
         <br />
         <br />
         <br />
