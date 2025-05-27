@@ -1,20 +1,29 @@
+.navbar-custom-gradient {
+    background: linear-gradient(to right, #27527e, #04b5ef);
+    /* Potentially add other navbar specific styles if needed */
+}
+
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    /* color: white; */ /* Removed: navbar-dark class on nav should handle this */
+    color: #ffffff; /* Changed to white for contrast */
     margin-left: 10px; /* Adjust margin as needed */
-    font-family: "Permanent Marker", cursive; /* Correctly set the font-family */
+    font-family: "Helvetica Neue", Arial, sans-serif; /* Changed to a professional sans-serif font */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added subtle text shadow */
 }
 
 .btn-secondary {
-    background-color: #27527e; /* Button background color */
-    border-color: #27527e;
-
+    background: linear-gradient(to right, #27527e, #04b5ef); /* Applied gradient */
+    border: none; /* Removed border or set to a matching color */
+    color: #ffffff; /* Ensure text is white */
+    transition: background 0.3s ease, transform 0.3s ease; /* Added transition */
 }
 
 .btn-secondary:hover {
-    background-color: #04b5ef; /* Button hover background color */
-    border-color: #04b5ef;
+    background: linear-gradient(to right, #1a3c5a, #038fbf); /* Darker gradient on hover */
+    border: none; /* Ensure no border on hover */
+    color: #ffffff;
+    transform: scale(1.05); /* Added scale effect on hover */
 }
 
 .dropdown-menu {
@@ -23,9 +32,29 @@
 
 .dropdown-item {
     color: #fff; /* Dropdown item text color */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Added transition */
 }
 
 .dropdown-item:hover {
     background-color: lightblue; /* Hovered dropdown item background color */
     color: #fff; /* Hovered dropdown item text color */
+}
+
+/* Styles from Navibar.css */
+.nav-link-custom {
+    font-family: "Cormorant", serif; /* Correct font-family with a fallback */
+    color: #ffffff; /* Changed to white for contrast */
+    text-decoration: none; /* Optional: remove underline if present */
+    padding: 8px 15px; /* Adjusted padding for a slightly larger clickable area */
+    margin-left: 5px; /* Added margin for spacing between links */
+    margin-right: 5px; /* Added margin for spacing between links */
+    font-size: medium; /* font-size: 1rem; was here but overridden by this line */
+    border-radius: 4px; /* Added for slight rounding on hover feedback */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added subtle text shadow */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Added transition */
+}
+
+.nav-link-custom:hover {
+    color: #f0f0f0; /* Light grey for hover text */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
 }
