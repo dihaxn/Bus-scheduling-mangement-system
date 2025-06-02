@@ -5,8 +5,19 @@
     background: linear-gradient(135deg, #1a2a6c, #ffffff);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
-    position: relative;
+    position: relative; /* needed so ::after can be positioned correctly */
     z-index: 1000;
+}
+
+/* 1a) Orange gradient bar at the bottom of the header */
+.navbar-custom-gradient::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
 }
 
 /* 2) Brand styling: white text, text-shadow, orange underline on hover */
@@ -28,7 +39,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #ff7e5f; /* Orange accent from footer */
+    background: #ff7e5f; /* Orange accent */
     transition: width 0.3s ease;
 }
 

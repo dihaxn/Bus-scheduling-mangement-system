@@ -3,7 +3,7 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
-import logo from "./logo.gif";
+import logo from "./logo.gif"; // Your bus system logo
 
 export default function Header({ isAuthenticated, setIsAuthenticated }) {
   const navigate = useNavigate();
@@ -17,14 +17,14 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
       <div>
         <div className="pos-f-t">
           <nav className="navbar navbar-custom-gradient">
-            {/* Company logo and name */}
+            {/* Company / App logo and name */}
             <Link to="/" className="navbar-brand d-flex align-items-center">
               <img
                   src={logo}
-                  alt="Company Logo"
+                  alt="Bus Schedule Logo"
                   style={{ height: "40px", marginRight: "10px" }}
               />
-              RoutesTimePro
+              BusSchedulePro
             </Link>
 
             {/* Centered Nav links */}
@@ -35,18 +35,23 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
+                <Nav.Link as={Link} to="/search" className="nav-link-custom">
+                  Search Buses
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
                 <Nav.Link as={Link} to="/booking" className="nav-link-custom">
-                  Booking
+                  My Booking
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link as={Link} to="/map" className="nav-link-custom">
-                  Bus Schedules
+                  Route Map
                 </Nav.Link>
               </Nav.Item>
             </Nav>
 
-            {/* Right‐side Login/Sign In or Profile dropdown */}
+            {/* Login/Signup or Profile dropdown */}
             <div className="ml-auto d-flex align-items-center">
               {!isAuthenticated ? (
                   <>
@@ -54,7 +59,7 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
                       Login
                     </Link>
                     <Link to="/signup" className="btn btn-secondary">
-                      Sign in
+                      Sign Up
                     </Link>
                   </>
               ) : (
@@ -74,7 +79,7 @@ export default function Header({ isAuthenticated, setIsAuthenticated }) {
                         Profile
                       </Link>
                       <a className="dropdown-item" href="#" onClick={handleSignOut}>
-                        Sign out
+                        Sign Out
                       </a>
                     </div>
                   </div>
