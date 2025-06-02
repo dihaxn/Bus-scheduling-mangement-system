@@ -1,36 +1,153 @@
+/* Bussearch.css */
+
+/* 1) Share same color variables as Header/Footer */
+:root {
+    --nav-bg-dark:  #1E3A5F; /* deep navy-blue */
+    --nav-bg-light: #2470B3; /* medium blue for optional hovers */
+    --nav-text:     #FFFFFF; /* white */
+    --nav-text-alt: #F0F0F0; /* near-white */
+    --accent:       #FF7E5F; /* vivid orange */
+    --accent-dark:  #E65A3C; /* darker orange */
+    --divider:      #FFC49B; /* light peach for subtle borders */
+}
+
+/* 2) Wrapper: ensure entire component uses the same font */
 .bussearch {
     display: flex;
     align-items: center;
-    font-family: "Balsamiq Sans", cursive;
-    font-size: 1rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
 }
 
-.navbar-nav {
+/* 3) Navbar background + bottom orange bar */
+.navbar-custom {
+    background: transparent;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+/* Orange gradient bar at bottom of this navbar */
+.navbar-custom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dark) 100%);
+}
+
+/* 4) Toggler (for collapsed mobile view) styled to match theme */
+.toggler-custom .navbar-toggler-icon {
+    filter: invert(1); /* makes the default icon white */
+}
+
+/* 5) Nav container (horizontal layout) */
+.navbar-nav-custom {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.nav-link {
+/* 6) Nav.Link tweaks to use theme colors */
+.nav-link-custom {
+    color: var(--nav-text);
     white-space: nowrap;
     margin-right: 10px;
+    position: relative;
+    padding: 0.5rem 0.75rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.custom-button {
-    border-color: lightblue;
-    color: lightblue;
-    padding: 0.5rem 1rem;
-    white-space: nowrap; /* Ensure button text doesn't wrap */
+/* Hover on links: light hover background + orange underline */
+.nav-link-custom:hover {
+    color: var(--nav-text-alt);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link-custom::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+    width: 100%;
+}
+
+/* 7) NavDropdown menu items override to match theme */
+.dropdown-menu {
+    background-color: var(--nav-bg-dark);
+    border: none;
+}
+
+.dropdown-item {
+    color: var(--nav-text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--accent);
+    color: var(--nav-text);
+}
+
+/* 8) Form (search + button) adjustments */
+.form-custom {
+    display: flex;
+    align-items: center;
+}
+
+/* 9) Search input: white text on dark background, subtle border */
+.search-input-custom {
     background-color: transparent;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    border: 1px solid var(--divider);
+    color: var(--nav-text);
+    padding: 0.4rem 0.75rem;
     border-radius: 4px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.custom-button:hover {
-    background-color: lightblue;
-    border-color: lightblue;
-    color: white;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+.search-input-custom::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input-custom:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent);
+    outline: none;
+}
+
+/* 10) Button: orange background, lift on hover */
+.btn-custom {
+    background: var(--accent);
+    border: none;
+    color: var(--nav-text);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-custom:hover {
+    background: var(--accent-dark);
     transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 11) Ensure collapsed (mobile) links use same colors */
+@media (max-width: 768px) {
+    .nav-link-custom {
+        margin: 0.5rem 0;
+        padding: 0.75rem 0.5rem;
+    }
+    .form-custom {
+        margin-top: 0.5rem;
+    }
 }
