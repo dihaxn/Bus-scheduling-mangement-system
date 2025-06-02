@@ -99,7 +99,7 @@
     box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
 }
 
-/* 5) Dropdown: dark‐blue background, orange hover for items */
+/* 5) Dropdown: dark‐blue background, orange hover for items (no longer used here) */
 .dropdown-menu {
     background-color: #1a2a6c;
     border: none;
