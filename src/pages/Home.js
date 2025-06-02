@@ -35,9 +35,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="footer-wrapper">
+
         <Footer />
-      </div>
     </div>
   );
 }
