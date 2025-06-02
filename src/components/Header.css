@@ -1,60 +1,125 @@
+/* Header.css */
+
+/* 1) Navbar background: same gradient as .footer-container */
 .navbar-custom-gradient {
-    background: linear-gradient(to right, #27527e, #04b5ef);
-    /* Potentially add other navbar specific styles if needed */
+    background: linear-gradient(135deg, #1a2a6c, #ffffff);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    position: relative;
+    z-index: 1000;
 }
 
+/* 2) Brand styling: white text, text-shadow, orange underline on hover */
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ffffff; /* Changed to white for contrast */
-    margin-left: 10px; /* Adjust margin as needed */
-    font-family: "Helvetica Neue", Arial, sans-serif; /* Changed to a professional sans-serif font */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added subtle text shadow */
-}
-
-.btn-secondary {
-    background: linear-gradient(to right, #27527e, #04b5ef); /* Applied gradient */
-    border: none; /* Removed border or set to a matching color */
-    color: #ffffff; /* Ensure text is white */
-    transition: background 0.3s ease, transform 0.3s ease; /* Added transition */
-}
-
-.btn-secondary:hover {
-    background: linear-gradient(to right, #1a3c5a, #038fbf); /* Darker gradient on hover */
-    border: none; /* Ensure no border on hover */
     color: #ffffff;
-    transform: scale(1.05); /* Added scale effect on hover */
+    margin-left: 10px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.dropdown-menu {
-    background-color: #27527e; /* Dropdown menu background color */
+.navbar-brand::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff7e5f; /* Orange accent from footer */
+    transition: width 0.3s ease;
 }
 
-.dropdown-item {
-    color: #fff; /* Dropdown item text color */
-    transition: background-color 0.2s ease, color 0.2s ease; /* Added transition */
+.navbar-brand:hover {
+    color: #ff7e5f;
 }
 
-.dropdown-item:hover {
-    background-color: lightblue; /* Hovered dropdown item background color */
-    color: #fff; /* Hovered dropdown item text color */
+.navbar-brand:hover::after {
+    width: 60px;
 }
 
-/* Styles from Navibar.css */
+/* 3) Nav links: white text, translucent bg on hover, orange underline */
 .nav-link-custom {
-    font-family: "Cormorant", serif; /* Correct font-family with a fallback */
-    color: #ffffff; /* Changed to white for contrast */
-    text-decoration: none; /* Optional: remove underline if present */
-    padding: 8px 15px; /* Adjusted padding for a slightly larger clickable area */
-    margin-left: 5px; /* Added margin for spacing between links */
-    margin-right: 5px; /* Added margin for spacing between links */
-    font-size: medium; /* font-size: 1rem; was here but overridden by this line */
-    border-radius: 4px; /* Added for slight rounding on hover feedback */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added subtle text shadow */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Added transition */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    font-size: 1rem;
+    border-radius: 4px;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-link-custom:hover {
-    color: #f0f0f0; /* Light grey for hover text */
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+    color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link-custom::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff7e5f; /* Orange accent */
+    transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+    width: 100%;
+}
+
+/* 4) Buttons: orange gradient, lift on hover */
+.btn-secondary {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(90deg, #ff6b4a, #ff9a7b);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+}
+
+/* 5) Dropdown: dark‐blue background, orange hover for items */
+.dropdown-menu {
+    background-color: #1a2a6c;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item {
+    color: #ffffff;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #ff7e5f;
+    color: #ffffff;
+}
+
+/* 6) Right‐side wrapper: small gap between elements */
+.ml-auto.d-flex.align-items-center {
+    gap: 0.5rem;
+}
+
+/* 7) Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-custom-gradient {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-link-custom {
+        margin: 5px 0;
+    }
+    .ml-auto.d-flex.align-items-center {
+        margin-top: 10px;
+    }
 }
