@@ -16,6 +16,7 @@ export default function Home() {
   };
 
   return (
+      <div>
     <div className="home-container">
       <div className="head">
         <br />
@@ -36,7 +37,8 @@ export default function Home() {
         </div>
       </div>
 
-        <Footer />
     </div>
+        <Footer />
+      </div>
   );
 }
