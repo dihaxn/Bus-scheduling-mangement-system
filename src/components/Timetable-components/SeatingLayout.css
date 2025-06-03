@@ -1,43 +1,94 @@
+/* SeatingLayout.css */
 .seating-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .door, .rear {
-    margin: 10px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .seats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) repeat(2, 1fr) repeat(2, 1fr) repeat(2, 1fr) repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px;
-    background-color: #fefeff;
-    border-radius: 10px;
-  }
-  
-  .seat {
-    width: 50px;
-    height: 50px;
-    background-color: #818386;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .seat.selected {
-    background-color: #ef8354;
-  }
-  
-  .seat.occupied {
-    background-color: #2d3142;
-    cursor: not-allowed;
-  }
- 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.door, .rear {
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a2a6c;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.seat {
+  width: 45px;
+  height: 45px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.seat:hover:not(.occupied) {
+  background-color: #dee2e6;
+  transform: translateY(-3px);
+}
+
+.seat.selected {
+  background-color: #4dabf7;
+  color: white;
+  border-color: #339af0;
+  box-shadow: 0 5px 15px rgba(77, 171, 247, 0.4);
+}
+
+.seat.occupied {
+  background-color: #495057;
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.seat-info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(26, 42, 108, 0.1);
+  border-radius: 8px;
+}
+
+.seat-info-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.seat-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.seat-color.available {
+  background-color: #e9ecef;
+}
+
+.seat-color.selected {
+  background-color: #4dabf7;
+}
+
+.seat-color.occupied {
+  background-color: #495057;
+}

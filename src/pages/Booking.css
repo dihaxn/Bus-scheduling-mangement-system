@@ -1,0 +1,93 @@
+/* BookingPage.css */
+
+/* ─── Page‐Level Background & Reset ───────────────────────────── */
+.booking-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a2a6c, #FFFFFF);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1rem 2rem;
+    color: #1a2a6c;
+}
+
+/* ─── Header ───────────────────────────────────────────────────── */
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.booking-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ─── Main Content Layout ──────────────────────────────────────── */
+.booking-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Journey section sits at the top */
+.journey-section {
+    display: flex;
+    justify-content: center;
+}
+
+/* Booking content: info card (left) + seating (right) */
+.booking-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* ─── Booking Info Card ───────────────────────────────────────── */
+.journey-details-card {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ─── Seating Layout Card ──────────────────────────────────────── */
+.seating-card {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the “Pay” button container is aligned right */
+.btn-container {
+    text-align: right;
+}
+
+/* Tweak React-Bootstrap table text so it’s visible on semi-opaque bg */
+table {
+    color: #1a2a6c;
+}
+
+/* Make sure Card.Text is also visible */
+.card-text {
+    color: #1a2a6c;
+}
+
+/* If Journey component has buttons/icons, ensure they contrast */
+button {
+    outline: none;
+}
+
+/* ─── Responsive Tweaks ───────────────────────────────────────── */
+@media (max-width: 768px) {
+    .booking-content {
+        flex-direction: column;
+    }
+}

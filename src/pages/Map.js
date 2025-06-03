@@ -7,7 +7,7 @@ import businfo from "../components/Timetable-components/busInfo";
 import { useLocation, useNavigate } from "react-router-dom";
 import Journey from "../components/Timetable-components/Journey";
 import Footer from "../components/Footer";
-
+import BookingModal from "../components/BookingModal"; // Add this import
 
 export default function Map() {
   const [bustable, setBusinfo] = useState(businfo);
@@ -15,6 +15,9 @@ export default function Map() {
   const location = useLocation();
   const destination = location.state?.destination || "";
   const navigate = useNavigate();
+  // Add modal state
+  const [showModal, setShowModal] = useState(false);
+  const [selectedJourney, setSelectedJourney] = useState(null);
 
   useEffect(() => {
     if (destination) {
@@ -41,6 +44,19 @@ export default function Map() {
     setBusinfo(bustable);
   }
 
+  // Handle journey selection
+  const handleJourneySelect = (journey) => {
+    setSelectedJourney(journey);
+    setShowModal(true);
+  };
+
+  // Handle payment
+  const handlePayment = (selectedSeats) => {
+    console.log("Processing payment for seats:", selectedSeats);
+    // In real app: navigate to payment page
+    setShowModal(false);
+  };
+
   return (
       <div className="map-container">
         <div className="search-bar-container">
@@ -58,13 +74,27 @@ export default function Map() {
               SortbyName={SortbyName}
               SortbyAttribute={SortbyAttribute}
           />
-          <Timetable bustable={filteredBustable} />
+          <Timetable
+              bustable={filteredBustable}
+              onJourneySelect={handleJourneySelect}
+          />
         </div>
+
+        {/* Modal */}
+        {showModal && selectedJourney && (
+            <BookingModal
+                journey={selectedJourney}
+                onClose={() => setShowModal(false)}
+                onPay={handlePayment}
+            />
+        )}
+
+        <Footer />
       </div>
   );
 }
 
-function Timetable({ bustable }) {
+function Timetable({ bustable, onJourneySelect }) {
   const color = [
     "primary",
     "secondary",
@@ -77,18 +107,18 @@ function Timetable({ bustable }) {
 
   return (
       <div>
-      <div className="list">
-        <ul>
-          {bustable.map((init) => (
-              <Journey
-                  key={init.id}
-                  journey={init}
-                  color={color[Math.floor(Math.random() * 7)]}
-              />
-          ))}
-        </ul>
-      </div>
-        <Footer/>
+        <div className="list">
+          <ul>
+            {bustable.map((init) => (
+                <Journey
+                    key={init.id}
+                    journey={init}
+                    color={color[Math.floor(Math.random() * 7)]}
+                    onClick={() => onJourneySelect(init)}
+                />
+            ))}
+          </ul>
+        </div>
       </div>
   );
 }

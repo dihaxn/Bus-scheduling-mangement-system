@@ -8,9 +8,9 @@ import "../../pages/Map.css";
 
 
 
-export default function Journey({ journey, color }) {
+export default function Journey({ journey, color, onClick }) {
     return (
-      <li>
+        <li onClick={onClick} style={{ cursor: 'pointer' }}>
         <div className="BusDetail">
           <Button variant={color}>{journey.Name}</Button>
           <p>Route number : {Math.floor(Math.random() * 300)}</p>
