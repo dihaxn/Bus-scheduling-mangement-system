@@ -1,93 +1,129 @@
-/* BookingPage.css */
+/* PassengerBookingDetails.css */
 
-/* ─── Page‐Level Background & Reset ───────────────────────────── */
-.booking-page {
+/* Gradient background and reset */
+.details-container {
     min-height: 100vh;
     background: linear-gradient(135deg, #1a2a6c, #FFFFFF);
     background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 1rem 2rem;
-    color: #1a2a6c;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* ─── Header ───────────────────────────────────────────────────── */
-.booking-header {
+.details-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header with fade-in title and back button */
+.details-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    color: #FFFFFF;
 }
 
-.booking-header h1 {
-    margin: 0;
-    font-size: 2rem;
+.details-header h1 {
+    font-size: 2.5rem;
     font-weight: 600;
+    margin: 0;
 }
 
-/* ─── Main Content Layout ──────────────────────────────────────── */
-.booking-main {
+.details-header .btn {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #FFFFFF;
+    background: transparent;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.details-header .btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #1a2a6c;
+}
+
+/* Layout for the main content */
+.details-main {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 2rem;
-}
-
-/* Journey section sits at the top */
-.journey-section {
-    display: flex;
     justify-content: center;
 }
 
-/* Booking content: info card (left) + seating (right) */
-.booking-content {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-/* ─── Booking Info Card ───────────────────────────────────────── */
-.journey-details-card {
-    flex: 1;
-    min-width: 300px;
+/* Passenger info card */
+.info-card {
+    flex: 1 1 300px;
+    max-width: 400px;
     background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ─── Seating Layout Card ──────────────────────────────────────── */
-.seating-card {
-    flex: 1;
-    min-width: 300px;
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.info-card .card-header {
+    background: transparent;
+    border-bottom: none;
+    color: #1a2a6c;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.info-card .card-body {
+    color: #1a2a6c;
+    padding: 1rem 1.5rem;
+}
+
+.info-card table td {
+    padding: 0.5rem 1rem;
+}
+
+/* Journey & seat details card */
+.journey-card {
+    flex: 1 1 500px;
+    max-width: 600px;
     background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Ensure the “Pay” button container is aligned right */
-.btn-container {
-    text-align: right;
+.journey-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Tweak React-Bootstrap table text so it’s visible on semi-opaque bg */
-table {
+.journey-card .card-header {
+    background: transparent;
+    border-bottom: none;
     color: #1a2a6c;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
-/* Make sure Card.Text is also visible */
-.card-text {
+.journey-card .card-body {
     color: #1a2a6c;
+    padding: 1rem 1.5rem;
 }
 
-/* If Journey component has buttons/icons, ensure they contrast */
-button {
-    outline: none;
+.journey-card table td {
+    padding: 0.5rem 1rem;
 }
 
-/* ─── Responsive Tweaks ───────────────────────────────────────── */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .booking-content {
+    .details-main {
         flex-direction: column;
+        align-items: center;
     }
 }

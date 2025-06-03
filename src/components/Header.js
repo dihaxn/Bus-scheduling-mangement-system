@@ -37,11 +37,6 @@ export default function Header() {
                   My Booking
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item>
-                <Nav.Link as={Link} to="/search" className="nav-link-custom">
-                  Route Map
-                </Nav.Link>
-              </Nav.Item>
             </Nav>
 
             {/* Always show Login and Sign Up on the right side */}
