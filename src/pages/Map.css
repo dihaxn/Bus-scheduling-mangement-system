@@ -2,17 +2,22 @@
 body {
   margin: 0;
   padding: 0;
+  /* Keep your existing gradient */
   background: linear-gradient(135deg, #1a2a6c, #FFFFFF);
   background-attachment: fixed;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Container around map + content */
 .map-container {
   position: relative;
   padding: 20px;
 }
 
+/* =============================== */
+/*  Glass‐morphic Search Bar       */
+/* =============================== */
 .search-bar-container {
   position: absolute;
   top: 20px;
@@ -24,19 +29,33 @@ body {
   padding: 12px 20px;
   border: none;
   border-radius: 30px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* make it semi‐transparent white */
+  background: rgba(255, 255, 255, 0.2);
+  /* apply backdrop blur */
+  backdrop-filter: blur(10px);
+  /* subtle border to define edges */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   width: 250px;
   transition: all 0.3s ease;
   font-size: 16px;
   outline: none;
+  color: #1a2a6c;
+}
+
+.search-input::placeholder {
+  color: rgba(26, 42, 108, 0.7);
 }
 
 .search-input:focus {
   width: 300px;
-  box-shadow: 0 6px 15px rgba(26, 42, 108, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
+/* =============================== */
+/*  Content Container + List       */
+/* =============================== */
 .content-container {
   margin-top: 80px;
 }
@@ -55,6 +74,7 @@ body {
   list-style: none;
   width: 80%;
   display: grid;
+  /* keep one per row on small, auto-fit on bigger screens */
   grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   gap: 1.5rem;
   justify-content: center;
@@ -62,25 +82,78 @@ body {
   padding: 0;
 }
 
+/* =============================== */
+/*  Glass‐morphic Cards (li)       */
+/* =============================== */
 .list li {
   display: flex;
   align-items: center;
-  border: 2px solid rgba(26, 42, 108, 0.3);
+  /* semi-transparent white */
+  background: rgba(255, 255, 255, 0.2);
+  /* backdrop blur behind the card */
+  backdrop-filter: blur(10px);
+  /* subtle border with opacity */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   justify-content: space-around;
-  background: rgba(255, 255, 255, 0.85);
   padding: 15px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* softer shadow so it floats gently */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #1a2a6c;
 }
 
 .list li:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(26, 42, 108, 0.2);
-  border-color: #1a2a6c;
-  background: white;
+  box-shadow: 0 12px 40px rgba(26, 42, 108, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
 }
 
+/* Optional: if you want some spacing inside each card’s content */
+.list li > * {
+  /* e.g., if Journey component has multiple spans/divs */
+  margin: 0 0.5rem;
+}
+
+/* =============================== */
+/*  Glass‐morphic Sort Section     */
+/* =============================== */
+.sort {
+  display: flex;
+  gap: 0.3rem;
+  /* make sort section transparent too */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  /* subtle border to define edges */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* If you have buttons or selects inside .sort, make sure their backgrounds also match */
+.sort button,
+.sort select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #1a2a6c;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sort button:hover,
+.sort select:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* =============================== */
+/*  Other Utility Classes          */
+/* =============================== */
 .Container {
   display: flex;
   justify-content: center;
@@ -93,16 +166,6 @@ body {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
-}
-
-.sort {
-  display: flex;
-  gap: 0.3rem;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .BusDeatil .Shedule .Icons .Ticket {
