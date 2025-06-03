@@ -1,52 +1,114 @@
+/* Home.css */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1a2a6c, #FFFFFF);
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.map-container {
+  position: relative;
+  padding: 20px;
+}
+
+.search-bar-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.search-input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  width: 300px;
+  box-shadow: 0 6px 15px rgba(26, 42, 108, 0.3);
+}
+
+.content-container {
+  margin-top: 80px;
+}
+
 .list {
   color: #1f1d1a;
-  padding: 4rem 0;
-
+  padding: 2rem 0;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   gap: 3.2rem;
   align-items: center;
 }
+
 .list ul {
   list-style: none;
-  width: 70%;
-
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   gap: 1.5rem;
   justify-content: center;
   align-content: start;
+  padding: 0;
 }
 
 .list li {
   display: flex;
   align-items: center;
-  border: 2px solid blue;
-  border-radius: 10px;
+  border: 2px solid rgba(26, 42, 108, 0.3);
+  border-radius: 15px;
   justify-content: space-around;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(26, 42, 108, 0.2);
+  border-color: #1a2a6c;
+  background: white;
+}
+
 .Container {
   display: flex;
-
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 1rem;
 }
+
 .Label {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
 }
+
 .sort {
   display: flex;
   gap: 0.3rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .BusDeatil .Shedule .Icons .Ticket {
   padding: 2rem;
 }
+
 .Icon {
   display: flex;
   flex-direction: row;

@@ -29,7 +29,6 @@ export default function Booking() {
         <Navibar />
       </header> */} {/* Removed old header block */}
       <main>
-        <h1>Booking Page</h1> {/* Moved h1 into main */}
         <section>
           <div className="ticket_container">
             <div className="ticket">

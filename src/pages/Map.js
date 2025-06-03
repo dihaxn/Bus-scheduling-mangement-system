@@ -1,19 +1,17 @@
-import React, { useState } from "react";
-import Bussearch from "../components/Bussearch";
+// Map.js
+import React, { useState, useEffect } from "react";
 import "../components/Header.css";
-import Header from "../components/Header";
-
 import "./Home.css";
 import Sort from "./Sort";
 import businfo from "../components/Timetable-components/busInfo";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Journey from "../components/Timetable-components/Journey";
-
+import Footer from "../components/Footer";
 
 
 export default function Map() {
   const [bustable, setBusinfo] = useState(businfo);
+  const [searchTerm, setSearchTerm] = useState("");
   const location = useLocation();
   const destination = location.state?.destination || "";
   const navigate = useNavigate();
@@ -21,11 +19,17 @@ export default function Map() {
   useEffect(() => {
     if (destination) {
       const filteredBustable = businfo.filter(
-        (bus) => bus.city === destination
+          (bus) => bus.city === destination
       );
       setBusinfo(filteredBustable);
     }
   }, [destination]);
+
+  const filteredBustable = bustable.filter(
+      (bus) =>
+          bus.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          (bus.city && bus.city.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
 
   function SortbyName(bustable) {
     bustable = bustable.slice().sort((a, b) => a.Name.localeCompare(b.Name));
@@ -37,37 +41,26 @@ export default function Map() {
     setBusinfo(bustable);
   }
 
-  function SortByCity(bustable, city) {
-    if (location.pathname !== "/map") {
-      navigate("/map");
-    }
-    bustable = businfo.slice().filter((a) => a.city === city);
-    setBusinfo(bustable);
-  }
-
   return (
-    <div className="home-container">
-      <div className="head">
-        <br />
-        <br />
-        <br />
-
-        <div className="content">
-          <br />
-          <br />
-          <div className="search-bar">
-            <br />
-            <Bussearch bustable={bustable} SortByCity={SortByCity} />
-          </div>
+      <div className="map-container">
+        <div className="search-bar-container">
+          <input
+              type="text"
+              placeholder="Search buses..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+          />
+        </div>
+        <div className="content-container">
+          <Sort
+              bustable={bustable}
+              SortbyName={SortbyName}
+              SortbyAttribute={SortbyAttribute}
+          />
+          <Timetable bustable={filteredBustable} />
         </div>
       </div>
-      <Sort
-        bustable={bustable}
-        SortbyName={SortbyName}
-        SortbyAttribute={SortbyAttribute}
-      />
-      <Timetable bustable={bustable} />
-    </div>
   );
 }
 
@@ -82,19 +75,20 @@ function Timetable({ bustable }) {
     "dark",
   ];
 
-  //2console.log(randnum);
-
   return (
-    <div className="list">
-      <ul>
-        {bustable.map((init) => (
-          <Journey
-            journey={init}
-            color={color[Math.floor(Math.random() * 7)]}
-          />
-        ))}
-      </ul>
-    </div>
+      <div>
+      <div className="list">
+        <ul>
+          {bustable.map((init) => (
+              <Journey
+                  key={init.id}
+                  journey={init}
+                  color={color[Math.floor(Math.random() * 7)]}
+              />
+          ))}
+        </ul>
+      </div>
+        <Footer/>
+      </div>
   );
 }
-

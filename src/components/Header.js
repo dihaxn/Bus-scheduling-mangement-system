@@ -28,7 +28,7 @@ export default function Header() {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link as={Link} to="/search" className="nav-link-custom">
+                <Nav.Link as={Link} to="/map" className="nav-link-custom">
                   Search Buses
                 </Nav.Link>
               </Nav.Item>
@@ -38,7 +38,7 @@ export default function Header() {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link as={Link} to="/map" className="nav-link-custom">
+                <Nav.Link as={Link} to="/search" className="nav-link-custom">
                   Route Map
                 </Nav.Link>
               </Nav.Item>
